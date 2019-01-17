@@ -11,6 +11,8 @@ Pod::Spec.new do |s|
 	s.author = { 'igormuzyka' => "igormuzyka42@gmail.com" }
 	s.source_files = "Sources/Action/*"
 
+    s.dependency "TypePreservingCodingAdapter"
+
 	s.osx.deployment_target = "10.10"
 	s.ios.deployment_target = "9.0"
 	s.tvos.deployment_target = "9.0"

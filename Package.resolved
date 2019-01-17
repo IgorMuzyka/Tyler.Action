@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "TypePreservingCodingAdapter",
+        "repositoryURL": "https://github.com/IgorMuzyka/Type-Preserving-Coding-Adapter",
+        "state": {
+          "branch": "master",
+          "revision": "56de4b11ca4154837b18634628e6370bb53fd095",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

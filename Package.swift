@@ -8,8 +8,10 @@ let package = Package(
     products: [
         .library(name: "Tyler.Action", targets: ["Action"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/IgorMuzyka/Type-Preserving-Coding-Adapter", .branch("master")),
+    ],
     targets: [
-        .target(name: "Action", dependencies: []),
+        .target(name: "Action", dependencies: ["TypePreservingCodingAdapter"]),
     ]
 )

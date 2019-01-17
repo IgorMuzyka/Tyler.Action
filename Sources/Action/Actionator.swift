@@ -9,7 +9,7 @@ public enum ActionatorError: Error {
 public enum Actionator {
 
     public static func actionate(view: NativeView, with action: Action, store: ActionHandlersStore) throws {
-        guard let handler = store.access(key: action.typeName) else {
+        guard let handler = store.access(by: action.alias) else {
             throw ActionatorError.hadlerForActionNotFound(action)
         }
 

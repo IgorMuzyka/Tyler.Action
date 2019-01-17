@@ -1,15 +1,17 @@
 
+import TypePreservingCodingAdapter
+
 #if os(iOS) || os(tvOS) || os(macOS)
 
 public final class ActionHandlersStore {
 
-    private var handlers = [String: (Any) -> Void]()
+    private var handlers = [Alias: (Any) -> Void]()
 
     public init() {}
 
 	@discardableResult
     public func add<GenericAction: Action>(_ handler: @escaping (GenericAction) -> Void) -> ActionHandlersStore {
-        let key = GenericAction.typeName
+        let key = GenericAction.alias
         handlers[key] = { input in
             guard let input = input as? GenericAction else {
                 fatalError("input type does not match expected input type: \(GenericAction.self)")
@@ -19,7 +21,7 @@ public final class ActionHandlersStore {
         return self
     }
 
-    internal func access(key: String) -> ((Any) -> Void)? {
+    internal func access(by key: Alias) -> ((Any) -> Void)? {
         return handlers[key]
     }
 }

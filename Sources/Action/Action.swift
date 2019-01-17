@@ -1,17 +1,14 @@
 
+import TypePreservingCodingAdapter
+
 public protocol Action: Codable {
 
-    var typeName: String { get }
-    static var typeName: String { get }
+    static var alias: Alias { get }
 }
 
 extension Action {
 
-    public var typeName: String {
-        return Self.typeName
-    }
-
-    public static var typeName: String {
-        return String(reflecting: type(of: Self.self))
+    internal var alias: Alias {
+        return Self.alias
     }
 }
